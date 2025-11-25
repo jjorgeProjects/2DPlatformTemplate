@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour
         //Check the input on each frame
         //Rewrite this "Vector2 move = callbackContext.ReadValue<Vector2>();" as:
         move = playerInput.actions["Movement"].ReadValue<Vector2>();
-        Debug.Log("Input modifified by el processor: " + move);
+        //Debug.Log("Input modifified by el processor: " + move);
     }
 
     private void FixedUpdate()
@@ -70,4 +70,9 @@ public class PlayerScript : MonoBehaviour
         }
     }
     */
+
+    public void ControlsChanged(PlayerInput playerInput)
+    {
+        Debug.Log("Controller changed: " + playerInput.currentControlScheme);
+    }
 }
