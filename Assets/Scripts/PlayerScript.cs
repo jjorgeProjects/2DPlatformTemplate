@@ -29,9 +29,24 @@ public class PlayerScript : MonoBehaviour
 
         //To test some behaviour we can still use the old way, only for testing!!
         //Keyboard, Gamepad, Mouse, ...
+        //Gamepad.current.buttonSouth.wasPressedThisFrame
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
             Debug.Log("E key pressed");
+        }
+
+        if (Keyboard.current.cKey.wasPressedThisFrame)
+        {
+            Debug.Log("Changing action map");
+            playerInput.SwitchCurrentActionMap("FlyingPlayerActionMap");
+            Debug.Log(playerInput.currentActionMap);
+        }
+
+        if (Keyboard.current.xKey.wasPressedThisFrame)
+        {
+            Debug.Log("Changing action map");
+            playerInput.SwitchCurrentActionMap("PlayerActionMap");
+            Debug.Log(playerInput.currentActionMap);
         }
     }
 
@@ -82,5 +97,16 @@ public class PlayerScript : MonoBehaviour
     public void ControlsChanged(PlayerInput playerInput)
     {
         Debug.Log("Controller changed: " + playerInput.currentControlScheme);
+    }
+
+
+    //A different action
+    public void Fly(CallbackContext callbackContext)
+    {
+        if (callbackContext.performed)
+        {
+            Debug.Log("Flying");
+            rb.AddForce(Vector2.up * 1000.0f, ForceMode2D.Impulse);
+        }
     }
 }

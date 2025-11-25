@@ -164,7 +164,7 @@
             "id": "c795cced-e9fd-4dd5-8ffe-2ccc16596090",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Fly",
                     "type": "Button",
                     "id": "dcdb7aa9-6206-40a1-b5f0-23f65d917148",
                     "expectedControlType": "",
@@ -177,11 +177,11 @@
                 {
                     "name": "",
                     "id": "f1638c49-31db-40c3-946d-b296e541cc5c",
-                    "path": "",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "groups": ";Keyboard",
+                    "action": "Fly",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
